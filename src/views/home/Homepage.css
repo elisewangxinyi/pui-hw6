@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    /* Set the default font family and color*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+  
+    /* Set the background color*/
+    background-color: white;
+}
+
+.Homepage a {
+    color:black;
+    text-decoration:none;
+}
+
+/***********************Header************************/
+header {
+    display: flex;
+}
+
+#header-logo {
+    width: 450px;
+    padding-top: 30px;
+    padding-left: 40px;
+    flex-shrink: 0;
+}
+
+#header-content {
+    flex-grow: 1;
+    margin-left: 40px;
+}
+
+
+header hr {
+    height: 7px;
+    background-color:black;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 100;
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+/************************Cart**************************/
+
+#cart {
+    width: 80%;
+    border-style: none;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 50px;
+
+    font-size: 18px;
+    text-align: center;
+    
+}
+
+#cart hr {
+    height: 7px;
+    background-color:rgba(118, 82, 49, 0.304);
+    border-style: none;
+}
+
+#cart .cart-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px;
+    margin-bottom: 20px;
+}
+
+#cart .cart-info p {
+    margin: 0px; 
+}
+
+#cart .cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+
+    /* justify-content: space-evenly; */
+}
+
+
+/********************Search & Sort*********************/
+#search-sort {
+    display: flex;
+    margin-top: 30px;
+    padding-left: 10%;
+    padding-right: 100px;
+
+    font-size: 18px;
+}
+
+#search input {
+    width: 300px;
+    border-width: 2px;
+}
+
+#sort {
+    margin-left: 50px;
+}
+
+/********************Product List*********************/
+#product-list {
+    width: 1000px;
+    margin-left:auto;
+    margin-right: auto;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#no-result {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+}
