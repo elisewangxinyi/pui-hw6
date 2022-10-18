@@ -5,6 +5,15 @@ import Navbar from '../../components/Navbar';
 import Popup from '../../components/Popup';
 import CartItem from '../../components/CartItem';
 
+
+const CartItemtoJSON = (item) => {
+    localStorage.setItem(item.bunName, JSON.stringify(item));
+}
+
+const JSONtoCartItem = (storageKey) => {
+    return JSON.parse(localStorage.getItem(storageKey));
+}
+
 class Roll {
     glazingToPrice = {
         "Keep original": 0,
@@ -84,9 +93,7 @@ class Homepage extends Component {
                      3.99)
             ],
 
-            cart: [],
-            totalItem: 0,
-            totalPrice: 0,
+            cart: JSON.parse(localStorage.getItem("cart")) || [],
             popUpSeen: false,
             searchKey: null,
             showCart: false
@@ -118,7 +125,7 @@ class Homepage extends Component {
     }
 
     handleAddToCart = (index) => {
-        this.handlePopUp();
+        // this.handlePopUp();
         let newCart = this.state.cart;
         this.state.itemData[index].addToList(newCart);
         this.setState(prevState => ({
@@ -183,8 +190,6 @@ class Homepage extends Component {
     }
 
     handleRemoveFromCart = (itemToRemove) => {
-        console.log('here in remove')
-        console.log(itemToRemove)
         const index = this.state.cart.indexOf(itemToRemove);
         let newCart = this.state.cart;
         if (index > -1) {
@@ -197,6 +202,16 @@ class Homepage extends Component {
             totalItem: newCart.length,
             totalPrice: this.calcTotalPrice(newCart)
         }))
+    }
+
+    componentDidMount() {
+        localStorage.setItem("cart", JSON.stringify(this.state.cart));
+        console.log(JSON.parse(localStorage.getItem("cart")));
+    }
+    
+    componentDidUpdate() {
+        localStorage.setItem("cart", JSON.stringify(this.state.cart));
+        console.log(JSON.parse(localStorage.getItem("cart")));
     }
 
     render(){
@@ -223,10 +238,9 @@ class Homepage extends Component {
                 
                 {this.state.showCart &&
                     <div id='cart'>
-                        {/* <hr/> */}
                         <div className='cart-info'>
-                            <p>Shopping Cart {this.state.totalItem} items</p>
-                            <p>Total: ${this.state.totalPrice}</p>
+                            <p>Shopping Cart {this.state.cart.length} items</p>
+                            <p>Total: ${this.calcTotalPrice(this.state.cart)}</p>
                         </div>
                         
                         {cartEmpty && <div>The cart is empty!</div>}
@@ -240,7 +254,6 @@ class Homepage extends Component {
                                 })}
                             </div>
                         }
-                        {/* <hr/> */}
                     </div>
                 }
 
