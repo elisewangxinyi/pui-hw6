@@ -125,7 +125,7 @@ class Homepage extends Component {
     }
 
     handleAddToCart = (index) => {
-        // this.handlePopUp();
+        this.handlePopUp();
         let newCart = this.state.cart;
         this.state.itemData[index].addToList(newCart);
         this.setState(prevState => ({
