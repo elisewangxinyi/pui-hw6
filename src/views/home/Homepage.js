@@ -6,13 +6,7 @@ import Popup from '../../components/Popup';
 import CartItem from '../../components/CartItem';
 
 
-const CartItemtoJSON = (item) => {
-    localStorage.setItem(item.bunName, JSON.stringify(item));
-}
 
-const JSONtoCartItem = (storageKey) => {
-    return JSON.parse(localStorage.getItem(storageKey));
-}
 
 class Roll {
     glazingToPrice = {
@@ -226,13 +220,9 @@ class Homepage extends Component {
                     </div>
                     
                     <div id="header-content">
-                        <Navbar 
-                        toggleCart = {this.handleShowCart}
-                        />
+                        <Navbar toggleCart = {this.handleShowCart}/>
                         {/*EXAMPLE from: https://medium.com/@daniela.sandoval/creating-a-popup-window-using-js-and-react-4c4bd125da57*/ }
                         {this.state.popUpSeen ? <Popup addedItem={this.state.cart.at(-1)}/> : null}
-                        <hr />
-                        <h1>Our hand-made cinnamon rolls</h1>
                     </div>
                 </header>
                 
@@ -264,7 +254,7 @@ class Homepage extends Component {
                     </div>
 
                     <div id='sort'>
-                        <label>sort by:</label>
+                        <label>Sort by:</label>
                         <select onChange={(event) => this.handleSorting(event)}>
                             <option value=''>Please select</option>
                             <option value='name'>Name</option>

@@ -1,22 +1,24 @@
 /*************one item**********/
 
-.product{
+.product-card {
     display:block;
+    border-radius: 20px;
     width:310px;
     height:auto;
-    padding:10px;
+
     text-align:left;
 
     font-size: 18px;
+
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.464);
 }
 
+.product-customization{
+    padding:20px;
+}
 /***********prodcut description**********/
-.thumbnail-pic img {
-    width: 100%;
-    border-style:solid;
-    border-width:4px;
-    border-radius:8px;
-    border-color:black;
+.product-img img {
+    border-radius: 20px 20px 0px 0px;
 }
 
 .product-name {
@@ -42,7 +44,8 @@
     width:180px;
     padding: 8px;
     margin-top:10px;
-    border: 3px solid black;
+    border-radius: 20px;
+    border: 3px solid #ff6666;
 
     font-size: 18px;
 }
@@ -64,7 +67,8 @@
     height: 40px;
 
     background-color: white;
-    border: 3px solid black;
+    border-radius: 50%;
+    border: 3px solid #ff6666;
 
     font-size: 18px;
 }
@@ -73,7 +77,8 @@
     width: 40px;
     height: 40px;
 
-    border: 3px solid black;
+    border: 3px solid #ff6666;
+    border-radius: 50%;
     background-color: lightgray;
 
     font-size: 18px;
@@ -105,10 +110,11 @@
     font-size: 22px;
     font-weight: 700;
     background-color: white;
-    border: 3px solid black;
+    border-radius: 40px;
+    border: 3px solid #ff6666;
 }
 
 .btn-addCart:hover {
     cursor:pointer;
-    background-color: yellow;
+    background-color: #ff6666;
 }

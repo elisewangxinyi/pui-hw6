@@ -1,32 +1,19 @@
 /*************Nav bar**********/
 nav{
     display: flex;
+    align-items: center;
     margin-top: 45px;
     margin-bottom: 30px;
     margin-right: 50px;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 50px;
 }
 
-.navigation {
-    width:fit-content;
-    text-align:center;
-    font-size: 24px;
-    margin-right: 60px;
+nav h1 {
+    font-size: 46px;
+    font-style: italic;
+    font-weight: 100;
+    margin: 0px;
+
+    color: #000;
 }
-
-.navigation:hover {
-    font-weight:bold;
-    background-color:yellow; 
-    cursor: pointer;
-}
-
-.navbar .cart-content {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-right: 110px;
-    text-align: right;
-    font-size: 18px;
-}
-
-

@@ -8,7 +8,7 @@ body {
     font-size: 22px;
   
     /* Set the background color*/
-    background-color: white;
+    background-color: #faebd7;
 }
 
 .Homepage a {
@@ -19,32 +19,22 @@ body {
 /***********************Header************************/
 header {
     display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 #header-logo {
-    width: 450px;
+    width: 300px;
     padding-top: 30px;
-    padding-left: 40px;
+    padding-left: 30px;
     flex-shrink: 0;
 }
 
+
 #header-content {
     flex-grow: 1;
-    margin-left: 40px;
 }
 
-
-header hr {
-    height: 7px;
-    background-color:black;
-}
-
-header h1 {
-    font-size: 34px;
-    font-weight: 100;
-    margin-bottom: 0px;
-    margin-top: 80px;
-}
 
 /************************Cart**************************/
 
@@ -94,35 +84,34 @@ header h1 {
 /********************Search & Sort*********************/
 #search-sort {
     display: flex;
-    margin-top: 30px;
-    padding-left: 10%;
-    padding-right: 100px;
-
+    justify-content: center;
     font-size: 18px;
 }
 
+#search {
+    display: flex;
+    gap: 5px;
+}
 #search input {
     width: 300px;
     border-width: 2px;
 }
 
 #sort {
+    display: flex;
     margin-left: 50px;
+    gap: 10px;
 }
 
 /********************Product List*********************/
 #product-list {
-    width: 1000px;
-    margin-left:auto;
-    margin-right: auto;
-
-    padding-top: 30px;
-    padding-bottom: 30px;
+    width: 100%;
+    padding: 100px 200px;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 80px;
 }
 
 #no-result {
